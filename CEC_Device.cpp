@@ -24,6 +24,7 @@ void CEC_Device::Initialize(int physicalAddress, CEC_DEVICE_TYPE type, bool prom
 	static const char valid_LogicalAddressesTuner[5] = {CLA_TUNER_1, CLA_TUNER_2, CLA_TUNER_3,
 	                                                    CLA_TUNER_4, CLA_UNREGISTERED};
 	static const char valid_LogicalAddressesAudio[2] = {CLA_AUDIO_SYSTEM, CLA_UNREGISTERED};
+	static const char valid_LogicalAddressesUniversal[2] = {CLA_FREE_USE, CLA_UNREGISTERED};
 
 	switch(type) {
 	case CDT_TV:               _validLogicalAddresses = valid_LogicalAddressesTV;    break;
@@ -31,6 +32,7 @@ void CEC_Device::Initialize(int physicalAddress, CEC_DEVICE_TYPE type, bool prom
 	case CDT_PLAYBACK_DEVICE:  _validLogicalAddresses = valid_LogicalAddressesPlay;  break;
 	case CDT_TUNER:            _validLogicalAddresses = valid_LogicalAddressesTuner; break;
 	case CDT_AUDIO_SYSTEM:     _validLogicalAddresses = valid_LogicalAddressesAudio; break;
+	case CDT_UNIVERSAL:        _validLogicalAddresses = valid_LogicalAddressesUniversal; break;
 	default:                   _validLogicalAddresses = NULL;
 	}
 
